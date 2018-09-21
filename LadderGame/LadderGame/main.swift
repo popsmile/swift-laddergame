@@ -12,7 +12,9 @@ import Foundation
 do {
     var inputView = InputView()
     try inputView.execute()
-//    print(inputView.ladderGame)
+    let ladder = inputView.ladderGame.makeLadder()
+    let resultView = ResultView(ladder:ladder)
+    resultView.print(ladder: ladder, players: inputView.ladderGame.playerNames)
 } catch InputError.outOfNameLength {
     print("참여자 이름은 다섯글자 이하로 입력해주세요.")
 } catch InputError.invalidType {
